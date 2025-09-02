@@ -2,14 +2,16 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_USER = 'your-dockerhub-username'
-        DOCKER_IMAGE = 'your-dockerhub-username/flask-app'
+        DOCKER_HUB_USER = 'Abhi-mishra998'  // your Docker Hub username
+        DOCKER_IMAGE = 'Abhi-mishra998/jenkins-docker-aws-pipeline'  // docker image name
     }
 
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                // Use your GitHub repo URL
+                git url: 'https://github.com/Abhi-mishra998/jenkins-docker-aws-pipeline.git', branch: 'main',
+                    credentialsId: 'github-credentials-id' // add your Jenkins GitHub credentials ID
             }
         }
 
